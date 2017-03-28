@@ -2,9 +2,10 @@
 /** */
 import { UIRouter, UIRouterGlobals, extend, Obj, TransitionOptions, TargetState } from "ui-router-core";
 import { Directive, Inject, Input, Optional, ElementRef, Renderer } from "@angular/core";
-import { UIView, ParentUIViewInject } from "./uiView";
+import { UIView } from "./uiView";
 import { ReplaySubject } from "rxjs/ReplaySubject";
 import { Subscription } from "rxjs/Subscription";
+import { ParentUIViewInject } from "./inject";
 
 /**
  * @internalapi
