@@ -6,20 +6,15 @@ import {
 } from '@angular/core';
 import { ɵReflectorReader as ReflectorReader } from '@angular/core';
 import {
-  UIRouter, isFunction, Transition, parse, TransitionHookFn, StateDeclaration, inArray, trace, ViewContext, ViewConfig,
+  UIRouter, isFunction, Transition, parse, TransitionHookFn, StateDeclaration, inArray, trace, ViewConfig,
   ActiveUIView, ResolveContext, NATIVE_INJECTOR_TOKEN, flattenR
 } from 'ui-router-core';
 import { Ng2ViewConfig } from '../statebuilders/views';
 import { MergeInjector } from '../mergeInjector';
+import { ParentUIViewInject } from "./inject";
 
 /** @hidden */
 let id = 0;
-
-/** @internalapi These are provide()d as the string UIView.PARENT_INJECT */
-export interface ParentUIViewInject {
-  context: ViewContext;
-  fqn: string;
-}
 
 /** @internalapi */
 interface InputMapping {
@@ -114,7 +109,7 @@ const ng2ComponentInputs = (reflector: ReflectorReader, ng2CompClass: Type<any>,
 @Component({
   selector: 'ui-view, [ui-view]',
   template: `
-    <template #componentTarget></template>
+    <ng-template #componentTarget></ng-template>
     <ng-content *ngIf="!componentRef"></ng-content>
   `
   // styles: [`

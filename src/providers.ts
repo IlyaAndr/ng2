@@ -90,7 +90,8 @@ import {
   UIRouter, PathNode, StateRegistry, StateService, TransitionService, UrlMatcherFactory, UrlRouter, ViewService,
   UrlService, UIRouterGlobals, services, Resolvable, NATIVE_INJECTOR_TOKEN
 } from "ui-router-core";
-import { UIView, ParentUIViewInject } from "./directives/uiView";
+import { UIView } from "./directives/uiView";
+import { ParentUIViewInject } from "./directives/inject";
 import { ng2ViewsBuilder, Ng2ViewConfig } from "./statebuilders/views";
 import { Ng2ViewDeclaration } from "./interface";
 import { applyRootModuleConfig, applyModuleConfig } from "./uiRouterConfig";
